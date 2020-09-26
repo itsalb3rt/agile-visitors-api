@@ -34,6 +34,21 @@ class VisitService {
     }
   }
 
+  static async getAll(params) {
+    const { criterions } = params;
+
+    try {
+      const { rows } = await Visit.findAndCountAll({
+        include: ['visitor', 'receiver'],
+        ...criterions
+         });
+      return { rows, count: rows.length };
+    } catch (error) {
+      console.log('VisitService -> getAll -> error', error)
+      throw error;
+    }
+  }
+
 }
 
 export default VisitService;
