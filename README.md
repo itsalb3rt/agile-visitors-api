@@ -10,6 +10,27 @@ API for application that registers visiting employees.
 
 - [API Query String Filters and More](#filters-and-more)
 
+
+# Get Started
+
+```bash
+$ git clone https://github.com/itsalb3rt/agile-visitors-api.git
+```
+
+Now copy and rename the `.env.example` file.
+
+```bash
+$ cp .env.example .env
+```
+
+By default the project is ready for using with docker
+
+```bash
+$ docker-compose up
+```
+
+Now you have now the API running in `http://localhost:5000/api` or `http://local.agile-visitors.api/api`
+
 # ENV file
 
 The `env` file contains a series of variables that modify the behavior of the api.
