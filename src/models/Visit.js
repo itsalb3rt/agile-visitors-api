@@ -21,7 +21,13 @@ User.hasOne(Visit, {
   foreignKey: 'userReceiverId'
 });
 
-Visit.belongsTo(User, { foreignKey: 'userVisitorId' });
-Visit.belongsTo(User, { foreignKey: 'userReceiverId' });
+Visit.belongsTo(User, {
+  foreignKey: 'userVisitorId',
+  as: 'visitor'
+});
+Visit.belongsTo(User, {
+  foreignKey: 'userReceiverId',
+  as: 'receiver'
+});
 
 export default Visit;
