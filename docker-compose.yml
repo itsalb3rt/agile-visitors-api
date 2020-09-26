@@ -5,6 +5,8 @@ services:
     build: .
     depends_on: 
       - postgres
+    ports:
+      - ${PORT}:${PORT}
     labels: 
       - "traefik.http.routers.agile-visitors.rule=Host(`${DOMAIN}`)"
       # - "traefik.http.routers.agile-visitors.entrypoints=websecure"
