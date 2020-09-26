@@ -1,11 +1,12 @@
 import express from 'express';
-import projectRoutes from '../routes/projects';
 import userRoutes from '../routes/User';
+import VisitRoutes from '../routes/Visit';
+
 // Initialization
 let router = express.Router();
 
 // Routes
-router.use('/projects', projectRoutes);
 router.use('/users', userRoutes);
+router.use('/visits', VisitRoutes);
 
 export default router;
