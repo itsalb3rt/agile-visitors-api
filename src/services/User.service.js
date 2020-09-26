@@ -34,18 +34,6 @@ class UserService {
     }
   }
 
-  static async delete(params) {
-    const { id } = params;
-    try {
-      const rowCount = await User.destroy({
-        where: { id }
-      })
-      return { count: rowCount };
-    } catch (error) {
-      throw error;
-    }
-  }
-
 }
 
 export default UserService;
