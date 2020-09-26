@@ -1,0 +1,30 @@
+version: '3'
+services:
+
+  agile-visitors-api:
+    build: .
+    depends_on: 
+      - postgres
+    labels: 
+      - "traefik.http.routers.agile-visitors.rule=Host(`${DOMAIN}`)"
+      # - "traefik.http.routers.agile-visitors.entrypoints=websecure"
+      # - "traefik.http.routers.agile-visitors.tls.certresolver=myresolver"
+      - "traefik.http.services.agile-visitors.loadbalancer.server.port=${PORT}"
+    networks:
+      - traefik-network
+  
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: ${POSTGRES_USER}
+    ports:
+      - ${POSTGRES_EXPOSED_PORT}:5432
+    networks:
+      - traefik-network
+
+networks:
+  traefik-network:
+    external:
+      name: traefik_proxynet
