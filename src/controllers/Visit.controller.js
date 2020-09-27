@@ -34,7 +34,7 @@ class UserController {
 
       return res.json(Response.get('Visit list', rows, 200, { count, total, offset }));
     } catch (error) {
-      return res.json(Response.get('Something goes wrong', error, 500));
+      return res.status(500).json(Response.get('Something goes wrong', error, 500));
     }
   }
 
@@ -48,7 +48,7 @@ class UserController {
       }
       return res.json(Response.get('Visit not found', {}));
     } catch (error) {
-      return res.json(Response.get('Something goes wrong', error, 500));
+      return res.status(500).json(Response.get('Something goes wrong', error, 500));
     }
   }
 
@@ -65,7 +65,7 @@ class UserController {
 
       return res.json(Response.get('Visit Updated', updatedEntity));
     } catch (error) {
-      return res.json(Response.get('Something goes wrong', error, 500));
+      return res.status(500).json(Response.get('Something goes wrong', error, 500));
     }
   }
 }

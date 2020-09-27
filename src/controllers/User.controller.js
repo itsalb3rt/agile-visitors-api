@@ -10,7 +10,7 @@ class UserController {
       const entityCreated = await UserService.create({ newEntity });
       return res.json(Response.get('User created', entityCreated));
     } catch (error) {
-      res.status(500).json({
+      return res.status(500).json({
         message: 'Something goes wrong',
         data: error
       })
@@ -34,7 +34,7 @@ class UserController {
 
       return res.json(Response.get('User list', rows, 200, { count, total, offset }));
     } catch (error) {
-      return res.json(Response.get('Something goes wrong', error, 500));
+      return res.status(500).json(Response.get('Something goes wrong', error, 500));
     }
   }
 
@@ -48,7 +48,7 @@ class UserController {
       }
       return res.json(Response.get('User not found', {}));
     } catch (error) {
-      return res.json(Response.get('Something goes wrong', error, 500));
+      return res.status(500).json(Response.get('Something goes wrong', error, 500));
     }
   }
 
@@ -65,7 +65,7 @@ class UserController {
 
       return res.json(Response.get('User Updated', updatedEntity));
     } catch (error) {
-      return res.json(Response.get('Something goes wrong', error, 500));
+      return res.status(500).json(Response.get('Something goes wrong', error, 500));
     }
   }
 }
