@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "a1a4c278-5aad-4eed-aba1-788d598907cd",
 		"name": "Agile Visitos",
-		"description": "\r\n## Query string\r\n\r\n**Filters**\r\n\r\n**between**\r\n\r\nFor example for check price from 0 to 14000.\r\n\r\n```\r\napi/visits?createAt=between:2020-09-01,2020-09-30\r\n```\r\n\r\n**Like**\r\n\r\nFor using `like` operator you can pass `search` query string var with `where` for indicate columns.\r\n\r\n```\r\napi/visits?search=some&where=reasonVisit\r\n```\r\n\r\nThis search for `some` in `reasonVisit` column.\r\n\r\n**Limit and offset**\r\n\r\nYou can use `limit` and `offset` for paginate.\r\n\r\n```\r\napi/visits?limit=10&page=2\r\n```\r\n\r\nThis example return the records between 11 to 20\r\n\r\n**Order**\r\n\r\nUse `-` sign for descending while `+` for ascending, by default if sign is not presented it will automatically set to `+` sign (ex: `sort=-created_at` or `sort=+created_at`). Value can be separated by a comma if multiple sort condition is needed (ex: `sort=id,name`).\r\n\r\n```\r\napi/visits?sort=-created_at\r\n```\r\n\r\nMore information: [https://github.com/perbert27/sequelize-querystring-converter](https://github.com/perbert27/sequelize-querystring-converter)\r\n",
+		"description": "\r\n## Query string\r\n\r\n**Filters**\r\n\r\n**between**\r\n\r\nFor example for check createdAt from `2020-09-01` to `2020-09-30`.\r\n\r\n```\r\napi/visits?createdAt=between:2020-09-01,2020-09-30\r\n```\r\n\r\n**Like**\r\n\r\nFor using `like` operator you can pass `search` query string var with `where` for indicate columns.\r\n\r\n```\r\napi/visits?search=some&where=reasonVisit\r\n```\r\n\r\nThis search for `some` in `reasonVisit` column.\r\n\r\n**Limit and offset**\r\n\r\nYou can use `limit` and `offset` for paginate.\r\n\r\n```\r\napi/visits?limit=10&page=2\r\n```\r\n\r\nThis example return the records between 11 to 20\r\n\r\n**Order**\r\n\r\nUse `-` sign for descending while `+` for ascending, by default if sign is not presented it will automatically set to `+` sign (ex: `sort=-created_at` or `sort=+created_at`). Value can be separated by a comma if multiple sort condition is needed (ex: `sort=id,name`).\r\n\r\n```\r\napi/visits?sort=-created_at\r\n```\r\n\r\nMore information: [https://github.com/perbert27/sequelize-querystring-converter](https://github.com/perbert27/sequelize-querystring-converter)\r\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -124,7 +124,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/visits?createAt=between:2020-09-01,2020-09-30",
+							"raw": "{{HOST}}/visits?createdAt=between:2020-09-01,2020-09-30",
 							"host": [
 								"{{HOST}}"
 							],
@@ -133,7 +133,7 @@
 							],
 							"query": [
 								{
-									"key": "createAt",
+									"key": "createdAt",
 									"value": "between:2020-09-01,2020-09-30"
 								}
 							]
@@ -170,7 +170,7 @@
 	],
 	"variable": [
 		{
-			"id": "8125008e-40a0-4441-8ed7-cfa8496a900c",
+			"id": "171fc315-d412-4ef7-ae25-8d6cef522876",
 			"key": "HOST",
 			"value": "http://localhost:5000/api"
 		}

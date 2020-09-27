@@ -84,10 +84,10 @@ $ npm run start
 
 **between**
 
-For example for check price from 0 to 14000.
+For example for check createdAt from `2020-09-01` to `2020-09-30`.
 
 ```
-api/visits?createAt=between:2020-09-01,2020-09-30
+api/visits?createdAt=between:2020-09-01,2020-09-30
 ```
 
 **Like**
