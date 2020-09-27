@@ -27,7 +27,9 @@ $ cp .env.example .env
 By default the project is ready for using with docker
 
 ```bash
-$ docker-compose up
+$ docker-compose up -d postgres
+# wait few seconds before run next command
+$ docker-compose up -d agile-visitors-api
 ```
 
 Now you have now the API running in `http://localhost:5000/api` or `http://local.agile-visitors.api/api`
@@ -79,6 +81,14 @@ $ npm run start
 ## Query string
 
 **Filters**
+
+**between**
+
+For example for check price from 0 to 14000.
+
+```
+api/visits?createAt=between:2020-09-01,2020-09-30
+```
 
 **Like**
 
