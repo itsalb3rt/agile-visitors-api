@@ -15,6 +15,7 @@ API for application that registers visiting employees.
 
 ```bash
 $ git clone https://github.com/itsalb3rt/agile-visitors-api.git
+$ cd agile-visitors-api
 ```
 
 Now copy and rename the `.env.example` file.
@@ -48,6 +49,28 @@ DATABASE_PASSWORD=postgres
 
 # Sequelize
 FORCE_SYNC=true # Create tables from models
+```
+---
+
+# Development
+
+For development
+
+```bash
+$ npm run dev
+```
+
+**Build**
+
+For created a production version
+```bash
+$ npm run build
+```
+
+**Run Production**
+
+```bash
+$ npm run start
 ```
 
 # Filters and More
@@ -86,25 +109,3 @@ api/visits?sort=-created_at
 ```
 
 More information: [https://github.com/perbert27/sequelize-querystring-converter](https://github.com/perbert27/sequelize-querystring-converter)
-
-
-# Development
-
-For development
-
-```bash
-$ npm run dev
-```
-
-**Build**
-
-For created a production version
-```bash
-$ npm run build
-```
-
-**Run Production**
-
-```bash
-$ npm run start
-```
