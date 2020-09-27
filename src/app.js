@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import router from './routes/routes';
 import cors from 'cors';
+import nocache from 'nocache';
 
 // Load env file
 dotenv.config();
@@ -15,7 +16,8 @@ app.use(morgan('dev'));
 app.use(json());
 app.use(cors({
   origin: '*'
-}))
+}));
+app.use(nocache());
 
 // Define Routes
 app.use('/api', router);
