@@ -119,3 +119,7 @@ api/visits?sort=-created_at
 ```
 
 More information: [https://github.com/perbert27/sequelize-querystring-converter](https://github.com/perbert27/sequelize-querystring-converter)
+
+# License
+
+This project uses the following license: [MIT](<https://choosealicense.com/licenses/mit/>)
