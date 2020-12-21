@@ -42,7 +42,8 @@ class VisitService {
         include: ['visitor', 'receiver'],
         ...criterions
          });
-      return { rows, count: rows.length };
+      const count = await Visit.count({ raw: true});   
+      return { rows, page: criterions.page , count: rows.length, total: count };
     } catch (error) {
       console.log('VisitService -> getAll -> error', error)
       throw error;
