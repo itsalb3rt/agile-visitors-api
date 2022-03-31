@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:12.22-bullseye-slim
 
 RUN mkdir -p /usr/src/app
 
